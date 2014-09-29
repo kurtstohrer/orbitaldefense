@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="menuscripts.js"></script>
+    <title>Orbital Defense</title>
+	<script>
+	
+		
+	</script>
+</head>
+<body onload="hide();">
+	<div id="menu">
+		<button onclick="showMenu(),styles(),clearMessage()">Upgrades</button>
+		<span class="info" id="score"></span>
+		<span class="info" id="cash"></span>
+		<span class="info" id="health"></span>
+		
+		</div>
+		<div id="main">
+		<table>
+		<tr>
+		<td>
+			<button class="mBut" onclick="playgame(),createjs.Sound.stop(),createjs.Sound.play('game',{loop:-1, volume: 0.5})"> PLAY GAME</button>
+		</td>
+		<td>
+			<button class="mBut" onclick="window.location = 'http://www.kurtstohrer.com/OD/highscores.php'"> HIGH SCORES</button>
+		</td>
+		</tr>
+		</table>
+		</div>
+		<div id="gameover">
+			<form action="http://www.kurtstohrer.com/OD/add.php" name="hcform"  method="post">
+			
+				<h1>GAME OVER</h1>
+				<p id="score1"></p>
+				<p>Enter Name</p>
+				<input id="name" type="text" name="name"><br>
+				 <input type="hidden" id="scoref" name="scoref" value="app.main.score" readonly>
+				 <input type="submit" id="submit" name="submit" value="Submit your Score"></br>
+				 
+		</form>
+			<button id="pa" onclick="playAgain()">Play Again</button>
+		</div>
+		<div id="GameMenu" style="display:none;">
+			<button onclick="closeMenu()" id="close"> X</button>
+			
+		
+			<table id="menuTable">
+    <tr>
+        <th>Tier</th>
+        <th>Fire Rate</th>
+		<th>Bullet Speed</th>
+        <th>More Satellites</th>
+        <th>Health</th>
+		<th>Super Bullets</th>
+    </tr>
+    <tr>
+        <td class="tier">I</td>
+        <td class="but" id="fr1" onclick="app.buttons.fr1()">$100</td>
+		<td class="but" id="bs1"  onclick="app.buttons.bs1()"> $100</td>
+        <td class="but" id="t1" onclick="app.buttons.t1()">$100</td>
+        <td class="but" id="h1"  onclick="app.buttons.h1()">$1000</td>
+		<td class="but" id="SB1" onclick="app.buttons.superBullets()">$2000</td>
+    </tr>
+    <tr>
+        <td class="tier">II</td>
+        <td class="but" id="fr2" onclick="app.buttons.fr2()">$200</td>
+		<td class="but" id="bs2"  onclick="app.buttons.bs2()"> $200</td>
+        <td class="but" id="t2" onclick="app.buttons.t2()">$200</td>
+     
+    </tr>
+    <tr>
+        <td class="tier">III</td>
+        <td class="but" id="fr3" onclick="app.buttons.fr3()">$400</td>
+		<td class="but" id="bs3"  onclick="app.buttons.bs3()"> $400</td>
+        <td class="but" id="t3" onclick="app.buttons.t3()">$400</td>
+       
+    </tr>
+    <tr>
+        <td class="tier">IV</td>
+        <td class="but" id="fr4" onclick="app.buttons.fr4()">$800</td>
+		<td class="but" id="bs4"  onclick="app.buttons.bs4()"> $800</td>
+        <td class="but" id="t4" onclick="app.buttons.t4()">$800</td>
+        
+    </tr>
+</table>
+<p id="message"></p>
+</div>
+
+	
+ <canvas>
+		Get a real browser!
+	</canvas>
+	<p style="font-size:30px; color:#ffffff; text-align:center;">Created by Kurt Stohrer</p>
+	<script src="http://code.createjs.com/soundjs-0.5.2.min.js"></script>
+	<script src="js/modernizr.custom.js"></script>
+	<script src="js/loader.js"></script>
+	
+
+</body>
+</html>
